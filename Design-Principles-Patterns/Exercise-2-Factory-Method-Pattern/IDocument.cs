@@ -1,0 +1,4 @@
+interface IDocument
+{
+    void Open();
+}
