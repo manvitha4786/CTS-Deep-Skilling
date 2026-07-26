@@ -1,0 +1,18 @@
+@FirstWebAPI_HostAddress = http://localhost:5097
+
+### Generate JWT Token
+GET {{FirstWebAPI_HostAddress}}/api/Auth
+
+###
+
+### Get Employees using JWT
+GET {{FirstWebAPI_HostAddress}}/api/Employee
+Authorization: Bearer YOUR_TOKEN_HERE
+Accept: application/json
+
+###
+
+### Test Invalid Token
+GET {{FirstWebAPI_HostAddress}}/api/Employee
+Authorization: Bearer INVALID_TOKEN
+Accept: application/json
