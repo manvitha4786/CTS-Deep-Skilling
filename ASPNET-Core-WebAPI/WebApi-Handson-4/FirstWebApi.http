@@ -1,0 +1,69 @@
+@FirstWebAPI_HostAddress = http://localhost:5097
+
+### Get All Employees
+GET {{FirstWebAPI_HostAddress}}/api/Employee
+Accept: application/json
+
+###
+
+### Get Employee By Id
+GET {{FirstWebAPI_HostAddress}}/api/Employee/1
+Accept: application/json
+
+###
+
+### Add Employee
+POST {{FirstWebAPI_HostAddress}}/api/Employee
+Content-Type: application/json
+
+{
+  "id": 3,
+  "name": "Alice",
+  "salary": 60000,
+  "permanent": true,
+  "department": {
+    "id": 103,
+    "name": "Finance"
+  },
+  "skills": [
+    {
+      "id": 1,
+      "name": "Excel"
+    }
+  ],
+  "dateOfBirth": "1999-05-10T00:00:00"
+}
+
+###
+
+### Update Employee
+PUT {{FirstWebAPI_HostAddress}}/api/Employee/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "John Updated",
+  "salary": 70000,
+  "permanent": true,
+  "department": {
+    "id": 101,
+    "name": "IT"
+  },
+  "skills": [
+    {
+      "id": 1,
+      "name": "C#"
+    },
+    {
+      "id": 2,
+      "name": "SQL"
+    }
+  ],
+  "dateOfBirth": "1998-05-10T00:00:00"
+}
+
+###
+
+### Delete Employee
+DELETE {{FirstWebAPI_HostAddress}}/api/Employee/2
+Accept: application/json
